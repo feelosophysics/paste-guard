@@ -1,0 +1,2 @@
+# paste-guard
+paste-guard
