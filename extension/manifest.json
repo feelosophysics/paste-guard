@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Paste Guard",
+  "version": "0.1.0",
+  "description": "이미지를 붙여넣는 순간 개인정보·보안 정보 노출 후보를 찾아 가린다.",
+  "permissions": ["storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ],
+  "options_page": "options.html",
+  "action": { "default_title": "Paste Guard 설정", "default_popup": "options.html" }
+}

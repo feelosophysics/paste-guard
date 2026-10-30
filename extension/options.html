@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>Paste Guard 설정</title>
+<style>
+  body { font: 14px system-ui, sans-serif; margin: 16px; min-width: 300px; color: #1f2328; }
+  label { display: block; margin: 12px 0 4px; font-weight: 600; }
+  input[type=text] { width: 100%; box-sizing: border-box; padding: 6px 8px; }
+  .row { display: flex; gap: 8px; align-items: center; margin-top: 10px; }
+  #status { margin-top: 12px; color: #57606a; }
+</style>
+</head>
+<body>
+  <h3 style="margin:0">Paste Guard</h3>
+  <div class="row"><input type="checkbox" id="enabled"><span>붙여넣기 점검 켜기</span></div>
+  <label for="server">점검 서버 주소</label>
+  <input type="text" id="server" placeholder="http://localhost:8787">
+  <div class="row"><input type="checkbox" id="useLlm"><span>AI 문맥 판정 사용 (서버에 LLM이 설정된 경우)</span></div>
+  <div class="row"><button id="save">저장</button><button id="test">연결 확인</button></div>
+  <div id="status"></div>
+  <script src="options.js"></script>
+</body>
+</html>
