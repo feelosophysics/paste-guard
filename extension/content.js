@@ -286,7 +286,10 @@
     };
     shadow.addEventListener("keydown", (ev) => {
       if (ev.key === "Escape") cancel();
-      if (ev.key === "Enter") panel.querySelector('[data-a="mask"]').click();
+      if (ev.key === "Enter") {
+        ev.preventDefault(); // 포커스된 버튼의 기본 Enter 동작까지 겹치면 두 번 붙여넣는다
+        panel.querySelector('[data-a="mask"]').click();
+      }
     });
     render();
     panel.querySelector('[data-a="mask"]').focus();
